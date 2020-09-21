@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet" />
+    <style>
+      * {
+        margin: 0;
+        position: relative;
+        font-family: "VT323", monospace;
+      }
+
+      #container {
+        height: 100vh;
+        display: flex;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        /* background: #293260; */
+        background: url("./images/background-04-01.png") no-repeat;
+        /* background-size: cover; */
+        /* background-image: url("./images/bg.png"); */
+        background-repeat: no-repeat;
+        background-position: 50% 46%;
+        overflow: hidden;
+      }
+
+      @keyframes all {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .planet-01 {
+        position: absolute;
+        top: 10%;
+        left: 8%;
+
+        animation: all reverse infinite 60s ease;
+        transform-origin: center center;
+      }
+
+      .planet-02 {
+        position: absolute;
+        top: 90%;
+        left: 70%;
+
+        animation: all normal infinite 40s ease-in-out;
+        transform-origin: center center;
+      }
+
+      .planet-03 {
+        position: absolute;
+        top: -3%;
+        left: 87%;
+
+        animation: all alternate infinite 30s linear;
+        transform-origin: center center;
+      }
+
+      .planet-05 {
+        position: absolute;
+        top: 58%;
+        left: 85%;
+
+        animation: all reverse infinite 45s ease-in;
+        transform-origin: center center;
+      }
+
+      .planet-06 {
+        position: absolute;
+        top: 30%;
+        left: 20%;
+
+        animation: all normal infinite 55s ease-out;
+        transform-origin: center center;
+      }
+
+      .planet-07 {
+        position: absolute;
+        top: 30%;
+        left: 85%;
+
+        animation: all alternate infinite 60s ease;
+        transform-origin: center center;
+      }
+
+      .planet-09 {
+        position: absolute;
+        top: 77%;
+        left: 25%;
+
+        animation: all reverse infinite 40s ease-in-out;
+        transform-origin: center center;
+      }
+
+      .planet-10 {
+        position: absolute;
+        top: 60%;
+        left: 7%;
+
+        animation: all normal infinite 50s ease-in;
+        transform-origin: center center;
+      }
+
+      #clock {
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        /* background-image: url("./images/earth.png"); */
+        /* background-repeat: no-repeat; */
+        /* background-position: 50% 50%; */
+        margin: auto;
+        filter: drop-shadow(0px 0px 80px rgb(15, 20, 35));
+      }
+
+      #clock img {
+        /* 動畫名稱 */
+        animation-name: earth;
+        /* 延遲時間 */
+        animation-delay: 1s;
+        /* 播放方向 */
+        animation-direction: reverse;
+        /* 播放次數 */
+        animation-iteration-count: infinite;
+        /* 持續時間 */
+        animation-duration: 40s;
+        /* 轉場速率 */
+        transition-timing-function: linear;
+        /* 原點定位 */
+        transform-origin: center center;
+      }
+
+      @keyframes earth {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      #hour {
+        position: absolute;
+        height: 8px;
+        width: 30%;
+        border-radius: 10px;
+        box-shadow: 0px 0px 25px 0px rgba(255, 255, 255, 1), 0px 0px 15px 0px rgba(255, 255, 255, 0.8), 0px 0px 10px 0px rgba(255, 255, 255, 0.6);
+        left: 20%;
+        top: calc(50% - 5px);
+        transform-origin: right center;
+      }
+
+      #minute {
+        position: absolute;
+        height: 8px;
+        width: 40%;
+        border-radius: 10px;
+        box-shadow: 0px 0px 25px 0px rgba(255, 255, 255, 1), 0px 0px 15px 0px rgba(255, 255, 255, 0.8), 0px 0px 10px 0px rgba(255, 255, 255, 0.6);
+        left: 10%;
+        top: calc(50% - 5px);
+        transform-origin: right center;
+      }
+
+      #second {
+        position: absolute;
+        height: 30px;
+        width: 45%;
+        /* background: red; */
+        /* border-radius: 10px; */
+        background-image: url("./images/plane-02.png");
+        background-repeat: no-repeat;
+        /* filter: drop-shadow 只有三個值 */
+        filter: drop-shadow(0px 0px 5px rgba(41, 50, 96, 0.8));
+        left: 5%;
+        top: calc(50% - 15px);
+        transform-origin: right center;
+      }
+
+      #center {
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        background: #fff;
+        border-radius: 50%;
+        left: calc(50% - 8px);
+        top: calc(50% - 8px);
+      }
+
+      #date {
+        position: absolute;
+        font-size: 80px;
+        color: #fff;
+        text-align: center;
+        bottom: 140px;
+      }
+
+      #time {
+        position: absolute;
+        font-size: 80px;
+        color: #fff;
+        text-align: center;
+        bottom: 70px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="planet-01"><img src="./images/planet-01.png" alt="" /></div>
+      <div class="planet-02"><img src="./images/planet-02.png" alt="" /></div>
+      <div class="planet-03"><img src="./images/planet-03.png" alt="" /></div>
+      <div class="planet-05"><img src="./images/planet-05.png" alt="" /></div>
+      <div class="planet-06"><img src="./images/planet-06.png" alt="" /></div>
+      <div class="planet-07"><img src="./images/planet-07.png" alt="" /></div>
+      <div class="planet-09"><img src="./images/planet-09.png" alt="" /></div>
+      <div class="planet-10"><img src="./images/planet-10.png" alt="" /></div>
+
+      <div id="clock">
+        <img src="./images/earth.png" alt="" />
+        <div id="hour"></div>
+        <div id="minute"></div>
+        <div id="second"></div>
+        <div id="center"></div>
+      </div>
+      <div id="date"></div>
+      <div id="time"></div>
+    </div>
+
+    <script src="./moment-with-locales.js"></script>
+    <script>
+      const hour = document.getElementById("hour");
+      const minute = document.getElementById("minute");
+      const second = document.getElementById("second");
+      const date = document.getElementById("date");
+      const time = document.getElementById("time");
+
+      // 為了解決進入頁面延遲一秒後才開始，先寫 function 後再用計時器
+      setInterval(function times() {
+        const now = new Date();
+        const h = now.getHours();
+        const m = now.getMinutes();
+        const s = now.getSeconds();
+        const yyyy = now.getFullYear();
+        const mm = now.getMonth();
+        const dd = now.getDate();
+
+        // 360度 / 12小時 = 30度/小時，因為0是水平，所以要在加90度
+        hour.style.transform = `rotate(${h * 30 + 90}deg)`;
+        // 360度 / 60分鐘 = 6度/分鐘
+        minute.style.transform = `rotate(${m * 6 + 90}deg)`;
+        // 360度 / 60秒 = 6度/秒
+        second.style.transform = `rotate(${s * 6 + 90}deg)`;
+
+        date.innerText = `${yyyy}.${mm}.${dd}`;
+        time.innerText = `${h}:${m}:${s}`;
+      }, 1000);
+
+      setInterval(setClock, 1000);
+      setClock();
+    </script>
+  </body>
+</html>
